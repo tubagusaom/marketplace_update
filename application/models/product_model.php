@@ -110,4 +110,23 @@ Class Product_model extends MY_Model
 
   }
 
+
+  public function get_all_product($perpage, $offset,$search="") {
+     if($search ==""){
+         $this->db->order_by('id', 'ASC');
+         $this->db->limit($perpage);
+         $this->db->offset($offset);
+         // $this->db->where('id_group_users',6);
+         $query = $this->db->get(kode_tbl().'product');
+     }else{
+         // $this->db->where('id_group_users',6);
+         $this->db->like('nama_product', $search);
+         $this->db->order_by('id', 'ASC');
+         $this->db->limit($perpage);
+         $this->db->offset($offset);
+         $query = $this->db->get(kode_tbl().'product');
+     }
+     return $query->result();
+ }
+
 }

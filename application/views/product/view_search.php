@@ -81,10 +81,10 @@
             <?php
               $total_filter = count($show_filter_product);
 
-              if ($total_filter == 0) {
+              if ($jmldata == 0) {
                 $notifsearch = "Oops, produk nggak ditemukan";
               }else {
-                $notifsearch = '<font style="color:#777;">Menampilkan ' .$total_filter. ' produk untuk </font> '.str_replace('%20',' ',$keyword);
+                $notifsearch = '<font style="color:#777;">Menampilkan ' .$jmldata. ' produk untuk </font> '.str_replace('%20',' ',$keyword);
               }
             ?>
 
@@ -103,7 +103,7 @@
           <div id="ProdukTerbaru" class="tab-pane active">
 
             <?php
-              if ($total_filter == 0) {
+              if ($jmldata == 0) {
                 // echo "Produk Belum Tersedia";
             ?>
 
@@ -111,7 +111,11 @@
               <img id="img-notfound" src="<?=base_url()?>assets/img/produk_belum_tersedia.png" alt="homedepo">
             </div>
 
-            <?php } ?>
+          <?php }else{ ?>
+
+            please wait , is updating !!!
+
+          <?php } ?>
 
             <ul class="products-grid columns5">
 

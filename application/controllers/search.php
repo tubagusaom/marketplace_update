@@ -7,6 +7,7 @@ class Search extends MY_Controller {
 
 		$this->load->model('product_model');
 		$this->load->model('welcome_model');
+		$this->load->library('pagination');
 	}
 
 	function index($id=0,$offset=0){
@@ -38,7 +39,11 @@ class Search extends MY_Controller {
 			$data['total_keranjang'] = $total_keranjang;
 		}
 
-		$data['keyword']=$this->input->get('q');
+		$keyword=$this->input->get('q');
+		$data['keyword']=$keyword;
+
+		// $suffix = "?q=".$keyword;
+		// echo $suffix;
 
 		if (empty($id_member)) {
 			$header = 'bootstraps/header';
@@ -48,8 +53,35 @@ class Search extends MY_Controller {
 			$filpro = "filter_buyer";
 		}
 
+		$offset = $this->uri->segment(3);
+		// $this->db->where('id_group_users',6);
+		$this->db->like('nama_product', $keyword);
+		$jml = $this->db->get(kode_tbl().'product');
+		$data['jmldata'] = $jml->num_rows();
+
+		$config['enable_query_strings'] = true;
+		$config['suffix'] = "?q=".$keyword;
+
+		$config['base_url'] = base_url().'asesor/view/'.$id;
+		$config['total_rows'] = $jml->num_rows();
+		$config['per_page'] = 10;
+		$config['first_page'] = 'Awal';
+		$config['last_page'] = 'Akhir';
+		$config['next_page'] = '&laquo;';
+		$config['prev_page'] = '&raquo;';
+		$config['uri_segment'] = 4;
+
+		$this->pagination->initialize($config);
+		//buat pagination
+		$data['halaman'] = $this->pagination->create_links();
+		$data['data'] = $this->product_model->get_all_product($config['per_page'],$offset,$keyword);
+
+		// echo $offset;
+
+		// var_dump($data['data']); die();
+
 		$this->load->view('templates/'.$header,$data);
-		$this->load->view('product/search');
+		$this->load->view('product/view_search');
 		$this->load->view('templates/bootstraps/bottom',$data);
 
 

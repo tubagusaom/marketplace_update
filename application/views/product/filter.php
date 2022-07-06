@@ -79,7 +79,7 @@
       <div class="tabs home-products-tab">
         <ul class="nav nav-links">
           <li class="active">
-            <a href="#ProdukTerbaru" data-toggle="tab"><font style="color:#777;;">Pencarian Berdasarkan</font> <?=str_replace('%20',' ',$ket_filter)?></a>
+            <a href="#ProdukTerbaru" data-toggle="tab"><font style="color:#777;;">Filter Berdasarkan</font> <?=str_replace('%20',' ',$ket_filter)?></a>
           </li>
           <!-- <li>
             <a href="#Diskon" data-toggle="tab">Kejar Diskon</a>
