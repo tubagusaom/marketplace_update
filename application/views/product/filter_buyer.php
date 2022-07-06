@@ -95,7 +95,7 @@
             ?>
 
             <div class="col-md-12">
-              <img src="<?=base_url()?>assets/img/produk_belum_tersedia.png" alt="homedepo">
+              <img id="img-notfound" src="<?=base_url()?>assets/img/produk_belum_tersedia.png" alt="homedepo">
             </div>
 
             <?php } ?>

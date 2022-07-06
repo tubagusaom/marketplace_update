@@ -10,7 +10,10 @@ class Search extends MY_Controller {
 		$this->load->library('pagination');
 	}
 
-	function index($id=0,$offset=0){
+	function show($id=0,$offset=0){
+
+		$keyword=$this->input->get('q');
+		$data['keyword']=$keyword;
 
 		$id_member = $this->auth->get_user_data()->id_member;
 		$data['aplikasi'] = $this->db->get('r_konfigurasi_aplikasi')->row();
@@ -39,36 +42,31 @@ class Search extends MY_Controller {
 			$data['total_keranjang'] = $total_keranjang;
 		}
 
-		$keyword=$this->input->get('q');
-		$data['keyword']=$keyword;
-
 		// $suffix = "?q=".$keyword;
 		// echo $suffix;
 
-		if (empty($id_member)) {
-			$header = 'bootstraps/header';
-			$filpro = "filter";
+		if($keyword==""){
+			// code...
 		}else {
-			$header = 'buyer/header';
-			$filpro = "filter_buyer";
-		}
 
-		$offset = $this->uri->segment(3);
+		$offset = $this->uri->segment(4);
 		// $this->db->where('id_group_users',6);
 		$this->db->like('nama_product', $keyword);
 		$jml = $this->db->get(kode_tbl().'product');
 		$data['jmldata'] = $jml->num_rows();
 
 		$config['enable_query_strings'] = true;
-		$config['suffix'] = "?q=".$keyword;
+		// $config['prefix'] = "?q=".$keyword."&rftb=true";
+		$config['suffix'] = "?q=".$keyword."&rftb=true";
 
-		$config['base_url'] = base_url().'asesor/view/'.$id;
+		$config['base_url'] = base_url().'search/show/'.$id;
 		$config['total_rows'] = $jml->num_rows();
-		$config['per_page'] = 10;
-		$config['first_page'] = 'Awal';
-		$config['last_page'] = 'Akhir';
-		$config['next_page'] = '&laquo;';
-		$config['prev_page'] = '&raquo;';
+		$config['per_page'] = 20;
+		$data['per_page'] = 20;
+		// $config['first_page'] = 'Awal';
+		// $config['last_page'] = 'Akhir';
+		// $config['next_page'] = '&laquo;';
+		// $config['prev_page'] = '&raquo;';
 		$config['uri_segment'] = 4;
 
 		$this->pagination->initialize($config);
@@ -79,6 +77,17 @@ class Search extends MY_Controller {
 		// echo $offset;
 
 		// var_dump($data['data']); die();
+		// var_dump($offset); die();
+
+		}
+
+		if (empty($id_member)) {
+			$header = 'bootstraps/header';
+			$filpro = "filter";
+		}else {
+			$header = 'buyer/header';
+			$filpro = "filter_buyer";
+		}
 
 		$this->load->view('templates/'.$header,$data);
 		$this->load->view('product/view_search');
@@ -121,6 +130,10 @@ class Search extends MY_Controller {
 			$data['total_keranjang'] = $total_keranjang;
 		}
 
+		if($k==""){
+			// code...
+		}else {
+
 		$data['show_filter_product'] = $this->product_model->show_filter_product($k,$id_k,$k1,$id_k1,$k2,$id_k2);
 
 		$menu_k   = $k;
@@ -141,6 +154,7 @@ class Search extends MY_Controller {
 		// var_dump($menu_id); die();
 		// var_dump($data['ket_filter']); die();
 
+		}
 
 		if (empty($id_member)) {
 			$header = 'bootstraps/header';

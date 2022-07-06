@@ -115,8 +115,6 @@
 
             please wait , is updating !!!
 
-          <?php } ?>
-
             <ul class="products-grid columns5">
 
               <?php
@@ -211,15 +209,30 @@
               <?php } ?>
 
             </ul>
+
+            <?php } ?>
           </div>
 
-          <div id="Diskon" class="tab-pane">
+          <div class="col-md-3">
+
+          </div>
+          <div class="col-md-9">
+              <div class="halaman">
+                  <ul class="pager">
+                      <li class="previous">
+                        Halaman :<?php echo rtrim($halaman) ."<b>/" . ceil($jmldata / $per_page); ?>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+
+          <!-- <div id="Diskon" class="tab-pane">
             <ul class="products-grid columns4">
 
               <li>PRODUK KEJAR DISKON</li>
 
             </ul>
-          </div>
+          </div> -->
 
         </div>
       </div>

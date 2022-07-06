@@ -112,6 +112,9 @@ Class Product_model extends MY_Model
 
 
   public function get_all_product($perpage, $offset,$search="") {
+
+    // var_dump($search); die();
+
      if($search ==""){
          $this->db->order_by('id', 'ASC');
          $this->db->limit($perpage);

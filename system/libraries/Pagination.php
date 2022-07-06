@@ -36,25 +36,26 @@ class CI_Pagination {
 	var $num_links			=  2; // Number of "digit" links to show before/after the currently viewed page
 	var $cur_page			=  0; // The current page being viewed
 	var $use_page_numbers	= FALSE; // Use page number for segment instead of offset
-	var $first_link			= '&lsaquo; First';
-	var $next_link			= '&gt;';
-	var $prev_link			= '&lt;';
-	var $last_link			= 'Last &rsaquo;';
+	var $first_link			= '<b title="Halaman Pertama">&lsaquo; &lsaquo;</b>';
+	// var $first_link = '<i class="fa fa-angle-double-left"></i>';
+	var $next_link			= '<font title="Halaman Selanjutnya">&gt;</font>';
+	var $prev_link			= '<font title="Halaman Sebelumnya">&lt;</font>';
+	var $last_link			= '<b title="Halaman Terakhir">&rsaquo; &rsaquo;</b>';
 	var $uri_segment		= 3;
 	var $full_tag_open		= '';
 	var $full_tag_close		= '';
 	var $first_tag_open		= '';
-	var $first_tag_close	= '&nbsp;';
+	var $first_tag_close	= '';
 	var $last_tag_open		= '&nbsp;';
 	var $last_tag_close		= '';
 	var $first_url			= ''; // Alternative URL for the First Page.
 	var $cur_tag_open		= '&nbsp;<strong>';
 	var $cur_tag_close		= '</strong>';
-	var $next_tag_open		= '&nbsp;';
-	var $next_tag_close		= '&nbsp;';
-	var $prev_tag_open		= '&nbsp;';
+	var $next_tag_open		= '';
+	var $next_tag_close		= '';
+	var $prev_tag_open		= '';
 	var $prev_tag_close		= '';
-	var $num_tag_open		= '&nbsp;';
+	var $num_tag_open		= '';
 	var $num_tag_close		= '';
 	var $page_query_string	= FALSE;
 	var $query_string_segment = 'per_page';
@@ -163,7 +164,7 @@ class CI_Pagination {
 				$this->cur_page = (int) $this->cur_page;
 			}
 		}
-		
+
 		// Set current page to 1 if using page numbers instead of offset
 		if ($this->use_page_numbers AND $this->cur_page == 0)
 		{
@@ -174,7 +175,7 @@ class CI_Pagination {
 
 		if ($this->num_links < 1)
 		{
-			show_error('Your number of links must be a positive number.');
+			show_error('Jumlah tautan Anda harus berupa angka positif.');
 		}
 
 		if ( ! is_numeric($this->cur_page))
@@ -200,7 +201,7 @@ class CI_Pagination {
 		}
 
 		$uri_page_number = $this->cur_page;
-		
+
 		if ( ! $this->use_page_numbers)
 		{
 			$this->cur_page = floor(($this->cur_page/$this->per_page) + 1);
@@ -228,7 +229,7 @@ class CI_Pagination {
 		// Render the "First" link
 		if  ($this->first_link !== FALSE AND $this->cur_page > ($this->num_links + 1))
 		{
-			$first_url = ($this->first_url == '') ? $this->base_url : $this->first_url;
+			$first_url = ($this->first_url == '') ? $this->base_url.$this->suffix : $this->first_url;
 			$output .= $this->first_tag_open.'<a '.$this->anchor_class.'href="'.$first_url.'">'.$this->first_link.'</a>'.$this->first_tag_close;
 		}
 
@@ -251,7 +252,7 @@ class CI_Pagination {
 			else
 			{
 				$i = ($i == 0) ? '' : $this->prefix.$i.$this->suffix;
-				$output .= $this->prev_tag_open.'<a '.$this->anchor_class.'href="'.$this->base_url.$i.'">'.$this->prev_link.'</a>'.$this->prev_tag_close;
+				$output .= $this->prev_tag_open.'<a '.$this->anchor_class.'href="'.$this->base_url.$i.$this->suffix.'">'.$this->prev_link.'</a>'.$this->prev_tag_close;
 			}
 
 		}
@@ -289,10 +290,16 @@ class CI_Pagination {
 						{
 							$n = ($n == '') ? '' : $this->prefix.$n.$this->suffix;
 
-							$output .= $this->num_tag_open.'<a '.$this->anchor_class.'href="'.$this->base_url.$n.'">'.$loop.'</a>'.$this->num_tag_close;
+							$output .= $this->num_tag_open.'<a '.$this->anchor_class.'href="'.$this->base_url.$n.$this->suffix.'">'.$loop.'</a>'.$this->num_tag_close;
 						}
 					}
 				}
+
+				// $aom = ($this->cur_page + $this->num_links);
+				// $aom = ($this->cur_page);
+				// $aom = $output;
+				// var_dump($aom); die();
+
 			}
 		}
 

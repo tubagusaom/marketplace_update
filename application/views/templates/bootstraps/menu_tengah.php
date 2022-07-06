@@ -145,7 +145,7 @@
 
         <div class="header-search">
           <a href="#" class="search-toggle"><i class="fa fa-search"></i></a>
-          <form action="<?=base_url()?>search/" method="GET">
+          <form action="<?=base_url()?>search/show/" method="GET">
 
             <div class="header-search-wrapper">
 
