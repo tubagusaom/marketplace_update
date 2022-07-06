@@ -96,8 +96,8 @@
             <div class="header-search-wrapper">
 
               <input type="text" class="form-control" name="q" id="Qword" placeholder="Cari..." required>
-              <input type="hidden" name="rf" value="true">
-              <input type="hidden" name="srp_component_id" value="">
+              <input type="hidden" name="rftb" value="true">
+              <!-- <input type="hidden" name="srp_component_id" value=""> -->
 
               <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
 

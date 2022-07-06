@@ -50,7 +50,8 @@ class Home extends MY_Controller {
         } else if ($jenis_user == 3) { //buyer
             $template_header = ('templates/buyer/header');
             $template_body = 'templates/buyer/body';
-            $template_bottom = 'templates/buyer/bottom_buyer';
+            // $template_bottom = 'templates/buyer/bottom_buyer';
+            $template_bottom = 'templates/bootstraps/bottom';
 
             // $template_header = ('templates/bootstraps/header');
             // $template_body = 'templates/bootstraps/body';

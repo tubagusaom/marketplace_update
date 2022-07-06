@@ -1680,12 +1680,13 @@ h2.word-rotator-title .word-rotate {
     /* width: 100%;
     height: auto; */
 
-		width: 60%;
-		height: 60%;
+		width: 50%;
+		height: 50%;
 
     display: block;
     margin-left: auto;
     margin-right: auto;
+		margin-top: 20px;
   }
 }
 
@@ -1709,6 +1710,7 @@ h2.word-rotator-title .word-rotate {
 	box-shadow: none;
 	padding: 0;
 	border: none;
+	padding-bottom: 80px;
 }
 
 .client {

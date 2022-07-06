@@ -50,7 +50,7 @@ class Search extends MY_Controller {
 
 		$this->load->view('templates/'.$header,$data);
 		$this->load->view('product/search');
-		$this->load->view('templates/bootstraps/bottom_filter',$data);
+		$this->load->view('templates/bootstraps/bottom',$data);
 
 
 	}

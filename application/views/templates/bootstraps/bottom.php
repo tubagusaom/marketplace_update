@@ -1,7 +1,7 @@
 <style media="screen">
-body{
+/* body{
   padding-bottom: 80px;
-}
+} */
 #footer {
  position:fixed;
  bottom:0;
