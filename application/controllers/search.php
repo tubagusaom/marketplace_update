@@ -17,6 +17,7 @@ class Search extends MY_Controller {
 
 		$id_member = $this->auth->get_user_data()->id_member;
 		$data['aplikasi'] = $this->db->get('r_konfigurasi_aplikasi')->row();
+		$data['nama_user'] = $this->auth->get_user_data()->nama;
 
 		$data['pengunjung'] = $this->welcome_model->dataPengunjung();
 		$data['total'] = $this->welcome_model->totalPengunjung();
@@ -42,6 +43,7 @@ class Search extends MY_Controller {
 			$data['total_keranjang'] = $total_keranjang;
 		}
 
+		// var_dump($keranjang_buyer); die();
 		// $suffix = "?q=".$keyword;
 		// echo $suffix;
 
@@ -89,6 +91,8 @@ class Search extends MY_Controller {
 			$filpro = "filter_buyer";
 		}
 
+		// var_dump($id_member); die();
+
 		$this->load->view('templates/'.$header,$data);
 		$this->load->view('product/view_search');
 		$this->load->view('templates/bootstraps/bottom',$data);
@@ -99,6 +103,7 @@ class Search extends MY_Controller {
 	function filter($k=false,$id_k=false,$k1=false,$id_k1=false,$k2=false,$id_k2=false) {
 
 		$id_member = $this->auth->get_user_data()->id_member;
+		$data['nama_user'] = $this->auth->get_user_data()->nama;
 
 		$data['aplikasi'] = $this->db->get('r_konfigurasi_aplikasi')->row();
 

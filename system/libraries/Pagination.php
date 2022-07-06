@@ -295,11 +295,6 @@ class CI_Pagination {
 					}
 				}
 
-				// $aom = ($this->cur_page + $this->num_links);
-				// $aom = ($this->cur_page);
-				// $aom = $output;
-				// var_dump($aom); die();
-
 			}
 		}
 

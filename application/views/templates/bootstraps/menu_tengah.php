@@ -42,6 +42,30 @@
             <a href="https://homedepo.co.id" target="_blank">TENTANG KAMI</a>
           </div>
 
+          <?php if (isset($nama_user)) { ?>
+
+          <div class="cart-dropdown">
+            <a href="<?=base_url()?>buyer/keranjang" class="cart-dropdown-icon">
+              <i class="minicart-icon"></i>
+              <span class="cart-info" style="top:45%;">
+                <span class="cart-qty">
+                  <?=$total_keranjang?>
+                </span>
+                <!-- <span class="cart-text">item(s)</span> -->
+              </span>
+            </a>
+
+            <div class="cart-dropdownmenu right">
+              <div class="dropdownmenu-wrapper">
+                <div class="cart-totals">
+                  Lihat <span>Keranjang</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <?php } ?>
+
           <!-- <div class="cart-dropdown">
             <a href="#" class="cart-dropdown-icon">
               <i class="minicart-icon"></i>

@@ -220,7 +220,7 @@
               <div class="halaman">
                   <ul class="pager">
                       <li class="previous">
-                        Halaman :<?php echo rtrim($halaman) ."<b>/" . ceil($jmldata / $per_page); ?>
+                          Halaman :<?php echo rtrim($halaman) ."<b>/" . ceil($jmldata / $per_page); ?>
                       </li>
                   </ul>
               </div>

@@ -119,6 +119,8 @@
 
 					<?=$this->load->view('templates/buyer/menu_atas'); ?>
 
+					<!-- templates/bootstraps/menu_tengah -->
+					<!-- templates/buyer/menu_tengah -->
 					<?=$this->load->view('templates/bootstraps/menu_tengah'); ?>
 
 					<?=$this->load->view('templates/bootstraps/menu_kategori'); ?>
