@@ -1,0 +1,21 @@
+/* ======================================================================
+
+	class all section front page
+
+	http://lspcohespa.org
+
+======================================================================== */
+.pageSection{
+	background:#fff;
+	margin-top:70px;
+	min-height:350px;
+}
+.bannerPage{
+	display:block;
+}
+.bannerPage img{
+	height:auto;width:100%;
+}
+.contentPage{
+	padding:30px 0;
+}

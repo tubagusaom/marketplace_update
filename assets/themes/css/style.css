@@ -1,0 +1,651 @@
+/* ===================================================================== */
+/* ===================================================================== */
+/* ==================      THEMPLATE FOR LSP      ====================== */
+/* ===================================================================== */
+/* ==================        JONATHAN LOGIN       ====================== */
+/* ===================================================================== */
+/* ===================================================================== */
+
+::selection {background-color: rgb(88, 85, 85);color: white;}
+::-moz-selection { background-color: #E13300; color: white; }
+::-webkit-scrollbar {width: 5px;}
+::-webkit-scrollbar-track {background-color: #A21A1A;} 
+::-webkit-scrollbar-thumb {background-color: rgb(255, 0, 0);} 
+::-webkit-scrollbar-button {background-color: #ED1913;}  
+::-webkit-scrollbar-corner {background-color: #ccc;}
+
+.form-control::-webkit-input-placeholder {color: #304a72;}
+.form-control:-moz-placeholder {color: #304a72;}
+.form-control::-moz-placeholder {color: #304a72;}
+.form-control:-ms-input-placeholder {color: #304a72;}
+.form-control::-ms-input-placeholder {color: #304a72;}
+.form-control:placeholder-shown {color: #304a72;}
+
+
+*, *:after, *:before {-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+body, html {font-size:100%;padding:0;margin:0;font-weight: 300;background: #fff}
+.hiddenEffect{opacity: 0;}.visibleEffect{opacity: 1;}
+.clearfix:before, .clearfix:after {content: " "; display: table;}
+.clearfix:after {clear: both;}
+
+
+@font-face{
+font-family: 'Open Sans';
+font-style: normal;
+font-variant: normal;
+font-size: 12px;
+src:url('fonts/Open_Sans/OpenSans-Light.ttf') format('truetype'),
+url('fonts/Open_Sans/OpenSans-Regular.ttf') format('truetype'),
+url('fonts/Open_Sans/OpenSans-Bold.ttf') format('truetype'),
+url('fonts/Open_Sans/OpenSans-Italic.ttf') format('truetype');
+}
+
+body {
+	font-family: 'Open Sans';
+	font: 13px/20px normal Helvetica, Arial, sans-serif;
+	color: #3C3C3C;scrollbar-face-color:#b46868;
+	overflow-x: hidden;
+	background: #E8E8E8;
+}
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+@media (min-width: 1200px){
+	.container {
+    width: 910px !important;
+}}
+
+@media (min-width: 992px){
+	.container {
+    	width: 910px !important;
+	}
+	
+}
+
+/*============== BOOTSTRAP MODIFY ================= */
+.carousel-inner {
+    box-shadow: 10px 55px 55px -50px #191919;
+}
+.carousel-caption{
+	text-align: left;
+	background: rgba(0, 0, 0, 0.7);
+	padding: 0 10px;
+	margin: 0;
+	bottom: 0;
+	left: 0;
+	right: 60%;
+	padding: 10px 20px;
+}
+.carousel-caption h2{
+	font-weight:bold;
+	margin-top:0
+}
+.carousel-caption h5{
+	font-weight:lighter;
+	font-stretch: condensed;
+	font-size: large;
+}
+.carousel-caption p{
+	font-size: smaller;
+	line-height: initial;
+}
+.carousel-control.left{
+	background: transparent;
+    margin-left: -100px;
+}
+.carousel-control.right{
+	background: transparent;
+    margin-right: -100px;
+}
+.carousel-indicators {
+    margin-bottom: -55px;
+}
+
+.carousel-indicators li {
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+}
+.carousel-indicators .active {
+    width: 7px;
+    height: 7px;
+    background-color: red;
+}
+
+.nav-justified {
+  background-color: #cb010a;
+  border-radius: 50px;
+}
+.nav-justified > li > a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin: 0;
+  font-weight: normal;
+  color: #fff;
+  text-align: center;
+  background-color: #e5e5e5; /* Old browsers */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#eb0e1a), to(#da0307));
+  background-image: -webkit-linear-gradient(top, #eb0e1a 0%, #da0307 100%);
+  background-image:      -o-linear-gradient(top, #eb0e1a 0%, #da0307 100%);
+  background-image:         linear-gradient(to bottom, #eb0e1a 0%,#da0307 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb0e1a', endColorstr='#da0307',GradientType=0 ); /* IE6-9 */
+  background-repeat: repeat-x; /* Repeat the gradient */
+  border-bottom: 1px solid #cb010a;
+}
+.nav-justified li .active>a,
+.nav-justified li > a:hover,
+.nav-justified li > a:focus {
+  background-color: #eb0e1a;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.15);
+          box-shadow: inset 0 3px 7px rgba(0,0,0,.15);
+}
+.nav-justified li li > a:hover,
+.nav-justified li li > a:focus {
+	background-color:transparent;
+	color:#fff;
+}
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
+  background-color: #eb0e1a;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.15);
+          box-shadow: inset 0 3px 7px rgba(0,0,0,.15);	
+}
+
+.nav-justified > li:first-child > a {
+  border-radius: 5px 5px 0 0;
+  margin-left:-15px;
+}
+.nav-justified > li:last-child > a {
+  border-bottom: 0;
+  border-radius: 0 0 5px 5px;
+  margin-right:-15px;
+}
+.dropdown-menu{
+	background-color: #E0070E;
+}
+.dropdown-menu>li>a{
+	color: #EDEDED;
+}
+.dropdown-menu .divider{
+	background-color: #C7080E;
+}
+.navbar {
+    background: #E5050D;
+}
+@media (min-width: 768px) {
+  .nav-justified {
+    max-height: 52px;
+  }
+  .nav-justified > li > a {
+    border-right: 1px solid #cb010a;
+    border-left: 1px solid #e60911;
+  }
+  .nav-justified > li:first-child > a {
+    border-left: 0;
+    border-radius: 5px 0 0 5px;    
+  }
+  .nav-justified > li:last-child > a {
+    border-right: 0;
+    border-radius: 0 5px 5px 0;
+  }
+  
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  /* Remove the padding we set earlier */
+  .masthead,
+  .marketing,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+ 
+}
+
+
+/*================= FONT STYLE ==================== */
+
+
+
+header{
+	background: linear-gradient(#e5e5e5,#ffffff);
+	background: -ms-linear-gradient(#e5e5e5,#ffffff);
+	background: -webkit-linear-gradient(#e5e5e5,#ffffff);
+	background: -moz-linear-gradient(#e5e5e5,#ffffff);
+	padding-bottom: 30px;
+}
+
+
+/*================= COLOR GUIDE =================== */
+#sosmedIcon a{
+	box-shadow: inset 0 3px 10px rgba(0,0,0,.5);
+}
+#sosmedIcon a:hover{
+	box-shadow: none;
+	color:#fff;
+}
+.icon{
+	display: inline-block;
+	text-align: center;
+	border-radius: 30px;
+	-ms-border-radius:30px;
+	-moz-border-radius:30px;
+	-webkit-border-radius:30px;
+}
+.facebook{
+	background-color: #3d77b8;
+	color: #fff;
+	box-shadow: inset 0 15px 35px -10px #5F5F5F;
+}
+.twitter{
+	background: #53d0f8;
+	color: #fff;
+}
+.google{
+	background: #9e3535;
+	color: #fff;
+}
+.youtube{
+	background: #f3191a;
+	color: #fff;
+}
+.redBox{
+	background: #a7191d;
+}
+.redLines{
+    margin: 0;
+    border-bottom: 10px solid #e5050d;
+    border-top: 0;
+}
+.whiteLine{
+	color: #fff !important;
+}
+.blueLine{
+	color:#092145;
+}
+.orangeBox{
+	background:#ebae07 ; 
+}
+.yellowLine{
+	color: #ffbe10;
+}
+
+/*==================  DROP DOWN  =================== */
+.nav-justified .dropdown-submenu {
+    position: relative;
+}
+
+.nav-justified .dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.nav-justified .dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.nav-justified .dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.nav-justified .dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.nav-justified .dropdown-submenu.pull-left {
+    float: none;
+}
+
+.nav-justified .dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    border-color: transparent;
+}
+/*==================  HEADER  =================== */
+header{
+	border-top: 2px solid #fff;
+}
+
+header .logo{
+	margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+	height: 100px;
+	
+}
+#tagline{
+	padding-top: 30px;
+	
+  }
+#sosmedIcon{
+	padding-top: 25px;
+	
+  }
+#top_header{
+	background-color: red;
+	height: 30px;padding: 5px;
+	color: white;font-weight: bold;
+	margin-left: 15px;
+	margin-right: 35px;
+	width: 97%;
+}
+.berita_tiga{
+	width: 300px;
+	height: 150px;
+}
+/*==================  MENU TOP  =================== */
+#menuTop{
+	
+	position: static;
+	padding-bottom: 25px;
+}
+
+#menuTop .centerMenu{
+	background: red;
+	border-radius: 0;
+	background: linear-gradient(#eb0e1a,#da0407);
+}
+
+#sosmedIcon i{
+	height: 30px;
+	width: 30px;
+	padding:10px;
+}
+
+#mainContent{
+	background:linear-gradient(#e3e3e3, #fff);
+}
+
+#mainContent .headerContent{
+	background: linear-gradient(#02296f,#1170b1);
+	background: -ms-linear-gradient(#02296f,#1170b1);
+	background: -webkit-linear-gradient(#02296f,#1170b1);
+	background: -moz-linear-gradient(#02296f,#1170b1);
+	padding: 50px;
+	margin: -71px 0 0;
+}
+
+#pageContent{
+	margin: 30px auto;
+	padding: 30px;
+	border-top: 5px solid #e5050d;
+	background: #fff;
+}
+#pageContent2{
+	margin: 30px auto;
+	padding: 30px;
+}
+#pageContent2 div {
+    padding: 10px 20px;
+}
+/*==================  SLIDER   ==================== */
+#slider{
+
+}
+
+#slider .overlay{
+	position: absolute;
+	display: block;
+	bottom: -50px;
+	z-index: 100;
+	right: 0;
+}
+/*==================  FEATURE  ==================== */
+#feature{
+	background: linear-gradient(#e5e5e5,#ffffff);
+	background: -ms-linear-gradient(#e5e5e5,#ffffff);
+	background: -webkit-linear-gradient(#e5e5e5,#ffffff);
+	background: -moz-linear-gradient(#e5e5e5,#ffffff);
+	padding: 60px 0 0;
+}
+#feature .caption{
+	display: block;
+	padding: 20px 30px;
+	text-align: center;
+	letter-spacing: 1px;
+	line-height: 1.3em;
+	background: #FFFFFF;
+	box-shadow: 0 15px 35px -10px #BFBFBF;
+}
+
+#feature .visimisi .box{
+	padding: 60px 0 0;
+}
+#feature .visimisi .box p{
+	line-height: 1.5em;
+	text-align:justify;
+	letter-spacing:1px;
+	font-weight: lighter;
+}
+
+#welcome{
+	padding: 60px 0;
+}
+#welcome p{
+    font-size: 14px;
+    line-height: 1.5em;
+}
+#services .item{
+	padding: 0 10px;
+}
+#services .item img{
+	height: 100px;width: 100px;margin-bottom: 20px;
+}
+/*================  SERTIFIKASI  ================== */
+#sertifikasi{
+	background: url(../../../uploads/bgkeunggulan.jpg) center center no-repeat scroll;
+	color: #ccc;
+	background-size: cover;
+}
+#sertifikasi .background{
+	background-color: rgba(10, 36, 64, 0.79);
+	padding: 60px 0;
+}
+#sertifikasi .box{
+	display: block;
+	padding-top: 30px;
+}
+#sertifikasi .box p{
+	padding-bottom: 30px;
+}
+#sertifikasi .item{
+	position:relative;
+	display:block;
+}
+#sertifikasi .item a{
+	position:relative;
+	margin-top:-20px;
+}
+#sertifikasi .item h5{
+	position:absolute;
+	background: rgba(0, 0, 0, 0.66);
+	padding: 10px 0 30px 0;
+	bottom:10px;
+	font-weight: 600;
+	color: #fff;
+	width: 100%;
+}
+/*================== TESTIMONI ==================== */
+#testimoni{
+	display: block;
+	padding: 60px 0;
+}
+#testimoni .item{padding-top: 20px;display: inline-flex;margin-bottom: 30px;}
+#testimoni .item img{display: -webkit-box;margin-right: 30px;width: 90px;height: 90px;}
+#testimoni .item p{display: inline;vertical-align: top;color: #6B6B6B;font-stretch: condensed;}
+#testimoni .item p>span{color:blue;display: block;font-style: italic;font-weight: bold;padding-top: 15px;}
+
+
+.item2 {padding: 20px 70px;display: inline-flex;}
+.item2 h5{margin: 0;}
+.item2 img{display: -webkit-box;margin-bottom: 15px;width: 90px;height: 90px;}
+.item2 p{vertical-align: top;color: #6B6B6B;font-stretch: condensed;}
+.item2 span{font-size: smaller;}
+.item2 p>span{color:blue;display: block;font-style: italic;font-weight: bold;padding-top: 15px;}
+/*=================== QUOTES ====================== */
+#quotes{
+	background: url(../../../uploads/slide/slide_02.jpg) no-repeat;
+	color: rgba(255, 255, 255, 0.82);
+	background-size: cover;
+}
+#quotes .overlay{
+	background: rgba(39, 82, 107, 0.8);
+	padding: 60px 0;
+}
+
+/*=================== GALLERY ====================== */
+
+.canvasGallery {
+    padding:10px;
+}
+
+.galleryImg {
+    overflow: hidden;
+    margin: 10px;
+    border: 10px solid #F9F8F8;
+    box-shadow: 0px 10px 10px -10px #333;
+}
+.galleryImg img {
+    width: 100%;
+    transition: all .5s ease-in-out;
+}
+.galleryImg img:hover{
+	transform: scale(1.5);
+	position: relative;
+}
+
+
+/*=================== LIST STYLE ====================== */
+.listStyle {
+    padding: 0;
+    color: #848181;
+}
+.listStyle li{
+    display:inline-flex;
+}
+.listStyle li i{
+    background: rgba(255, 168, 9, 0.52);
+    color:#fff;
+    border-radius:30px;
+    height:30px;
+    padding:10px;
+    margin-right:10px;
+}
+
+
+
+/*=================== FOOTER ====================== */
+footer{
+	background: #092043;
+}
+footer .form-control {
+    color: #6B8BBB;
+    background-color: #112c57;
+    border: 0;
+    box-shadow: inset 0 0px 4px 0 black;
+    border-bottom: 1px solid #354B6F;
+    }
+footer .btn{
+	font-size: 10px;
+}
+.fooTop{
+	padding: 30px 0;
+	line-height: 2;
+	letter-spacing: 0.5px;
+	font-size: 12px;
+	font-weight: 300;
+	color: #A2B3CC;
+}
+.fooBottom{
+	background: #031225;
+	padding: 30px 0 20px;
+	color: #273C5D;
+}
+=======
+
+@media screen and (max-width: 600px) {
+  #tagline{
+		padding: 130px;
+		background-color: red;
+	  }
+}
+/* Ini untuk maksimal 900px */
+@media screen and (max-width: 900px) {
+  #tagline{
+		padding: 30px;
+		background-color: yellow;
+	  }
+}
+/* Ini untuk minimal 160px dan maksimal 320px */
+@media screen and (min-width: 160px) and (max-width: 320) {
+   #tagline{
+		padding: 30px;
+		background-color: black;
+	  }
+}
+/* Ini untuk maksimal lebar perangkat 4800px */
+@media screen and (max-device-width: 480px) {
+  #tagline{
+		padding: 5px;
+		background-color: blue;
+		margin: 0 auto;
+		text-align: center;
+	  }
+  #sosmedIcon{
+  		padding: 5px;
+  }
+  #top_header{
+  	display: none;
+  }
+  #tag_title{
+  	font-size: 12px
+  }
+  .text-center{
+  	margin-top: 15px
+  }
+  #mainContent .headerContent{
+	background: linear-gradient(#02296f,#1170b1);
+	background: -ms-linear-gradient(#02296f,#1170b1);
+	background: -webkit-linear-gradient(#02296f,#1170b1);
+	background: -moz-linear-gradient(#02296f,#1170b1);
+	padding: 5px;
+	margin: -41px 0 0;
+}
+}
+.button-quote {
+    background-color: #05aed5;
+    color: #fff;
+    font-family: "Raleway",sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    margin-left: 10px;
+    padding: 5px 4px;
+    text-transform: capitalize;
+}

@@ -1,0 +1,201 @@
+.footer {
+    background-color: #637685;
+    border-top: 4px solid #ddd;
+    /*color: #777;*/
+    font-size: 14px;
+	margin-top: -30px;
+	min-height: 250px;
+}
+.footer .footerWrap {
+    padding-bottom: 15px;
+    padding-top: 20px;
+}
+.footer h4 {
+    border-bottom: 1px dotted #bbb;
+    font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 0 10px;
+    padding-bottom: 10px;
+}
+.footer ul {
+    margin: 0;
+}
+.footer ul li {
+    margin-bottom: 5px;
+}
+.footer a {
+    color: #888;
+}
+.footer a:hover, .footer a:focus {
+    color: #222;
+}
+.footer .sub-footer {
+    background-color: #e5e5e5;
+    border-top: 1px solid #ddd;
+    color: #777777;
+    font-size: 12px;
+    padding: 12px 0;
+	min-height: 60px;
+}
+.footer .sub-footer a {
+    color: #777;
+}
+.footer .sub-footer a:hover, .footer .sub-footer a:focus {
+    color: #222;
+}
+.footer .sub-footer ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+.footer .sub-footer ul > li {
+    float: left;
+}
+.footer .sub-footer ul > li {
+    display: block;
+    margin: 0;
+    position: relative;
+}
+.footer .sub-footer ul > li a {
+    margin-left: 15px;
+}
+@media (max-width: 767px) {
+	.footer {
+		text-align: center;
+	}
+	.footer .footerWrap ul {
+		margin-bottom: 30px;
+	}
+	.footer .sub-footer .left, .footer .sub-footer .right {
+		float: none;
+	}
+	.footer .sub-footer .right {
+		margin-top: 10px;
+	}
+	.footer .sub-footer .right a {
+		display: block;
+		margin-bottom: 4px;
+	}
+}
+.photo
+{
+	float: left;
+    height: 200px;
+    margin: 10px;
+    position: relative;
+    width: 180px;
+}
+.photo span
+{
+	background: url("../img/icons/pin.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    height: 21px;
+    left: 10px;
+    position: absolute;
+    top: -5px;
+    width: 28px;
+}
+.photo a 
+{
+    text-decoration: none;
+}
+.photo img 
+{
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #ccc;
+    padding: 4px;
+	height: 150px;
+	width: 180px;
+}
+.photo-person
+{
+	float: left;
+    margin: 10px;
+    position: relative;
+}
+.photo-person span
+{
+	background: url("../img/icons/pin.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    display: block;
+    height: 21px;
+    left: 10px;
+    position: absolute;
+    top: -5px;
+    width: 28px;
+}
+.photo-person a 
+{
+    text-decoration: none;
+}
+.photo-person img 
+{
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #ccc;
+    padding: 4px;
+}
+
+ul.list-slide
+{
+	list-style-image: url("../img/icons/scho-arrow.gif");
+}
+
+ul.list-slide li
+{
+	font-size: 24px;
+}
+
+.slide-header
+{
+	margin-top: 35%;
+}
+
+.h1-text
+{
+	font-size: 78px;
+	line-height: 80px;
+	display: block;
+	vertical-align: middle;
+}
+
+.h2-text
+{
+	font-size: 42px;
+	line-height: 48px;
+	display: block;
+	vertical-align: middle;
+}
+
+.h3-text
+{
+	font-size: 36px;
+	line-height:40px;
+	display: block;
+	vertical-align: middle;
+}
+
+.h4-text
+{
+	font-size: 24px;
+	line-height: 28px;
+	display: block;
+	vertical-align: middle;
+}
+
+.h5-text
+{
+	font-size: 18px;
+	line-height: 22px;
+	display: block;
+	vertical-align: middle;
+}
+
+.top-20
+{
+	margin-top: 20px;
+}
+
+audio
+{
+	display: none;
+}
