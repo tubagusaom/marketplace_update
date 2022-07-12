@@ -43,7 +43,7 @@ class Search extends MY_Controller {
 			$data['total_keranjang'] = $total_keranjang;
 		}
 
-		// var_dump($keranjang_buyer); die();
+		// var_dump($data['nama_user']); die();
 		// $suffix = "?q=".$keyword;
 		// echo $suffix;
 

@@ -113,12 +113,12 @@
 
           <?php }else{ ?>
 
-            please wait , is updating !!!
+            <!-- please wait , is updating !!! -->
 
             <ul class="products-grid columns5">
 
               <?php
-                foreach ($show_filter_product as $key => $productterbaru) {
+                foreach ($data as $key => $productterbaru) {
               ?>
 
               <li>
@@ -158,6 +158,8 @@
                           $idf = $productterbaru->id;
                         }
 
+                        if (isset($nama_user)) {
+
                       ?>
 
                       <a href="<?=base_url()?>home" onclick="<?=$onclickf?>(<?=$idf; ?>)" id="FaVorit" class="<?=$classf?>" title="<?=$titlef?>">
@@ -171,6 +173,18 @@
                       <!-- <a href="<?=base_url()?>product/bagikan/<?=$productterbaru->nama_file?>/<?=$productterbaru->id?>" class="comparelink" title="Bagikan">
                         <i class="fa fa-link" style="padding-top:8px;"></i>
                       </a> -->
+
+                      <?php }else{ ?>
+
+                        <a id="login-btn" data-toggle="modal" data-target="#myModal" href="#" class="in-favorit" title="Favoritkan">
+                          <i class="fa fa-heart" style="padding-top:8px;"></i>
+                        </a>
+
+                        <a id="login-btn" data-toggle="modal" data-target="#myModal" href="#" class="addtocart" title="Masukan Keranjang">
+                          <i class="fa fa-shopping-cart" style="padding-top:8px;"></i>
+                        </a>
+
+                      <?php } ?>
                     </div>
 
 
@@ -213,10 +227,10 @@
             <?php } ?>
           </div>
 
-          <div class="col-md-3">
+          <div class="col-md-3" style="margin-top:20px;margin-bottom:100px; border-top: 1px solid #ddd;">
 
           </div>
-          <div class="col-md-9">
+          <div class="col-md-9" style="margin-top:20px;margin-bottom:100px; border-top: 1px solid #ddd;">
               <div class="halaman">
                   <ul class="pager">
                       <li class="previous">

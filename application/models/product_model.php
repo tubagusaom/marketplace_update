@@ -120,14 +120,16 @@ Class Product_model extends MY_Model
          $this->db->limit($perpage);
          $this->db->offset($offset);
          // $this->db->where('id_group_users',6);
-         $query = $this->db->get(kode_tbl().'product');
+         $query = $this->db->get(kode_tbl().'product a');
      }else{
          // $this->db->where('id_group_users',6);
-         $this->db->like('nama_product', $search);
-         $this->db->order_by('id', 'ASC');
+         $this->db->like('a.nama_product', $search);
+         $this->db->order_by('a.id', 'ASC');
          $this->db->limit($perpage);
          $this->db->offset($offset);
-         $query = $this->db->get(kode_tbl().'product');
+         $this->db->join('t_repositori b','a.id=b.id_product');
+         $this->db->join(kode_tbl().'members c','a.id_member=c.id');
+         $query = $this->db->get(kode_tbl().'product a');
      }
      return $query->result();
  }
