@@ -66,11 +66,22 @@
     border: 1px solid #ee3d43;
   }
 
+  @media (max-width: 992px) {
+    .container-product{
+      padding-top: 230px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container-product{
+      padding-top: 20px;
+    }
+  }
+
 </style>
 
 <div role="main" class="main">
 
-<div class="container" style="padding-top:20px;">
+<div class="container container-product">
   <div class="row">
     <div class="col-md-12 normal">
       <div class="tabs home-products-tab">
@@ -143,19 +154,36 @@
                           $idf = $productterbaru->id;
                         }
 
+                        if (isset($nama_user)) {
+
                       ?>
 
                       <a href="<?=base_url()?>home" onclick="<?=$onclickf?>(<?=$idf; ?>)" id="FaVorit" class="<?=$classf?>" title="<?=$titlef?>">
                         <i class="fa fa-heart" style="padding-top:8px;"></i>
                       </a>
 
-                      <a id="addKeranjang" href="<?=base_url()?>home" onclick="addKeranjang(<?=$productterbaru->id; ?>)" class="addtocart" title="Masukan Keranjang">
+                      <a id="addKeranjang" href="<?=base_url()?>buyer/keranjang" onclick="addKeranjang(<?=$productterbaru->id; ?>)" class="addtocart" title="Masukan Keranjang">
                         <i class="fa fa-shopping-cart" style="padding-top:8px;"></i>
                       </a>
 
                       <!-- <a href="<?=base_url()?>product/bagikan/<?=$productterbaru->nama_file?>/<?=$productterbaru->id?>" class="comparelink" title="Bagikan">
                         <i class="fa fa-link" style="padding-top:8px;"></i>
                       </a> -->
+
+                    <?php
+                      }else {
+                    ?>
+
+                    <a id="login-btn" data-toggle="modal" data-target="#myModal" href="#" class="in-favorit" title="Favoritkan">
+                      <i class="fa fa-heart" style="padding-top:8px;"></i>
+                    </a>
+
+                    <a id="login-btn" data-toggle="modal" data-target="#myModal" href="#" class="addtocart" title="Masukan Keranjang">
+                      <i class="fa fa-shopping-cart" style="padding-top:8px;"></i>
+                    </a>
+
+                    <?php } ?>
+
                     </div>
 
 
@@ -228,7 +256,7 @@ var baseUrl = '<?=base_url()?>';
 function addKeranjang(id){
   // alert(id);
 
-  var toUrl = "buyer/tambah_keranjang";
+  var toUrl = "buyer/add_keranjang";
   var urlTarget = baseUrl+toUrl;
 
   $.ajax({

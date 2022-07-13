@@ -1,3 +1,16 @@
+<style media="screen">
+@media (max-width: 992px) {
+  .container-product{
+    padding-top: 230px;
+  }
+}
+@media (min-width: 992px) {
+  .container-product{
+    padding-top: 20px;
+  }
+}
+</style>
+
 <!-- select2 -->
 <link href="<?=base_url();?>assets/plugins/select2-4.0.3/dist/css/select2.min.css" rel="stylesheet" type="text/css"/>
 
@@ -5,7 +18,7 @@
 
 <div role="main" class="main">
   <div class="checkout">
-    <div class="container">
+    <div class="container container-product">
       <h1 class="h2 heading-primary mt-lg mb-md clearfix">
         Checkout
 

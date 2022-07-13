@@ -9,6 +9,7 @@
     .imgtb-responsive{
       height:192px!important;
     }
+
   }
 
   .addtocart{
@@ -65,15 +66,22 @@
     border: 1px solid #ee3d43;
   }
 
+  @media (max-width: 992px) {
+    .container-product{
+      padding-top: 230px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container-product{
+      padding-top: 20px;
+    }
+  }
+
 </style>
 
 <div role="main" class="main">
 
-
-
-
-
-<div class="container" style="padding-top:20px;">
+<div class="container container-product">
   <div class="row">
     <div class="col-md-12 normal">
       <div class="tabs home-products-tab">
@@ -113,7 +121,6 @@
                 <div class="product">
                   <figure class="product-image-area responsivetb-product">
 
-
                     <a href="<?=base_url()?>product/detail/<?=$productterbaru->id?>/<?=$productterbaru->nama_file?>" title="<?=$productterbaru->nama_product?>" class="product-image">
                       <img class="imgtb-responsive" src="<?=base_url()?>assets/img/product/<?=$productterbaru->nama_file?>" alt="<?=$productterbaru->tag_product?>">
                       <!-- <img src="<?=base_url()?>assets/img/product/<?=$productterbaru->nama_file?>" alt="<?=$productterbaru->tag_product?>" class="product-hover-image"> -->
@@ -124,19 +131,62 @@
                       <span>Lihat Produk</span>
                     </a>
 
-                      <div class="product-actions">
-                        <a id="login-btn" data-toggle="modal" data-target="#myModal" href="#" class="in-favorit" title="Favoritkan">
-                          <i class="fa fa-heart" style="padding-top:8px;"></i>
-                        </a>
 
-                        <a id="login-btn" data-toggle="modal" data-target="#myModal" href="#" class="addtocart" title="Masukan Keranjang">
-                          <i class="fa fa-shopping-cart" style="padding-top:8px;"></i>
-                        </a>
 
-                        <!-- <a href="#" class="comparelink" title="Bagikan">
-                          <i class="fa fa-link" style="padding-top:8px;"></i>
-                        </a> -->
-                      </div>
+                    <div class="product-actions" id="divProductActions">
+
+                      <?php
+                        $this->db->from(kode_tbl().'product_favorite'.' a');
+                        // $this->db->join(kode_tbl().'product b','a.id_product=b.id');
+                        $this->db->where('a.id_product', $productterbaru->id);
+                        $this->db->where('a.id_buyer', $id_member);
+                        $favorites = $this->db->get()->row();
+
+                        if ($favorites->id_product == $productterbaru->id) {
+                          $classf = 'del-favorit';
+                          $titlef = 'Hapus Favorit';
+                          $onclickf = 'deletFavorit';
+                          $idf = $favorites->id;
+                        }else {
+                          $classf = 'in-favorit';
+                          $titlef = 'Favoritkan';
+                          $onclickf = 'addFavorit';
+                          $idf = $productterbaru->id;
+                        }
+
+                        if (isset($nama_user)) {
+
+                      ?>
+
+                      <a href="<?=base_url()?>home" onclick="<?=$onclickf?>(<?=$idf; ?>)" id="FaVorit" class="<?=$classf?>" title="<?=$titlef?>">
+                        <i class="fa fa-heart" style="padding-top:8px;"></i>
+                      </a>
+
+                      <a id="addKeranjang" href="<?=base_url()?>buyer/keranjang" onclick="addKeranjang(<?=$productterbaru->id; ?>)" class="addtocart" title="Masukan Keranjang">
+                        <i class="fa fa-shopping-cart" style="padding-top:8px;"></i>
+                      </a>
+
+                      <!-- <a href="<?=base_url()?>product/bagikan/<?=$productterbaru->nama_file?>/<?=$productterbaru->id?>" class="comparelink" title="Bagikan">
+                        <i class="fa fa-link" style="padding-top:8px;"></i>
+                      </a> -->
+
+                    <?php
+                      }else {
+                    ?>
+
+                    <a id="login-btn" data-toggle="modal" data-target="#myModal" href="#" class="in-favorit" title="Favoritkan">
+                      <i class="fa fa-heart" style="padding-top:8px;"></i>
+                    </a>
+
+                    <a id="login-btn" data-toggle="modal" data-target="#myModal" href="#" class="addtocart" title="Masukan Keranjang">
+                      <i class="fa fa-shopping-cart" style="padding-top:8px;"></i>
+                    </a>
+
+                    <?php } ?>
+
+                    </div>
+
+
 
 
                   </figure>
@@ -150,7 +200,7 @@
                     </h2>
 
                     <h2 class="product-name">
-                      <a href="demo-shop-8-product-details.html" title="<?=$productterbaru->nama_product?>">
+                      <a href="#" title="<?=$productterbaru->nama_product?>">
                         <?=$productterbaru->nama_product?>
                       </a>
                     </h2>
@@ -187,6 +237,19 @@
 
     </div>
 
+    <!-- <div class="col-md-3" style="margin-top:20px;margin-bottom:100px; border-top: 1px solid #ddd;">
+
+    </div>
+    <div class="col-md-9" style="margin-top:20px;margin-bottom:100px; border-top: 1px solid #ddd;">
+        <div class="halaman">
+            <ul class="pager">
+                <li class="previous">
+                    Halaman :<?php echo rtrim($halaman) ."<b>/" . ceil($jmldata / $per_page); ?>
+                </li>
+            </ul>
+        </div>
+    </div> -->
+
     <!-- <aside class="col-md-3 sidebar shop-sidebar">
       <?=$this->load->view('templates/bootstraps/menu_samping'); ?>
     </aside> -->
@@ -197,3 +260,109 @@
 <!-- posisi pop up iklan -->
 
 </div>
+
+
+<script type="text/javascript">
+
+var baseUrl = '<?=base_url()?>';
+
+function addKeranjang(id){
+  // alert(id);
+
+  var toUrl = "buyer/add_keranjang";
+  var urlTarget = baseUrl+toUrl;
+
+  $.ajax({
+    url: urlTarget+'/'+id,
+    type: 'POST',
+    data: id,
+    processData: false,
+    contentType: false,
+    success: function (data) {
+      // data = JSON.parse(data);
+      if(data.error){
+        // $('#myOverlay').hide();
+        // $('#loadingGIF').hide();
+        alert(data.error);
+      }else{
+        alert('Produk berhasil ditambahkan ke keranjang');
+        // $("#FaVorit").load();
+        // $("#divFaVorit").load();
+      }
+      // alert('ok');
+      // $("#divFaVorit").load();
+    },
+    error: function (request, status, error) {
+      alert(request.responseText);
+      // $('#myOverlay').hide();
+      // $('#loadingGIF').hide();
+    }
+  });
+
+};
+
+function addFavorit(id){
+  // alert(id);
+
+  var toUrlf = "buyer/tambah_favorit";
+  var urlTargetf = baseUrl+toUrlf;
+
+  $.ajax({
+    url: urlTargetf+'/'+id,
+    type: 'POST',
+    data: id,
+    processData: false,
+    contentType: false,
+    success: function (data) {
+      // data = JSON.parse(data);
+      if(data.error){
+        // $('#myOverlay').hide();
+        // $('#loadingGIF').hide();
+        alert(data.error);
+      }else{
+        // alert('ok');
+        alert('Produk berhasil ditambahkan ke favorit');
+      }
+    },
+    error: function (request, status, error) {
+      alert(request.responseText);
+      // $('#myOverlay').hide();
+      // $('#loadingGIF').hide();
+    }
+  });
+
+};
+
+function deletFavorit(id){
+  // alert(id);
+
+  var toUrl = "buyer/hapus_favorit";
+  var urlTarget = baseUrl+toUrl;
+
+  $.ajax({
+    url: urlTarget+'/'+id,
+    type: 'POST',
+    data: id,
+    processData: false,
+    contentType: false,
+    success: function (data) {
+      // data = JSON.parse(data);
+      if(data.error){
+        // $('#myOverlay').hide();
+        // $('#loadingGIF').hide();
+        alert(data.error);
+      }else{
+        // alert('ok');
+        alert('Produk berhasil dihapus dari daftar favorit');
+      }
+    },
+    error: function (request, status, error) {
+      alert(request.responseText);
+      // $('#myOverlay').hide();
+      // $('#loadingGIF').hide();
+    }
+  });
+
+};
+
+</script>

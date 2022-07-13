@@ -67,6 +67,17 @@
     border-radius: 3px;
   }
 
+  @media (max-width: 992px) {
+    .container-product{
+      padding-top: 230px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container-product{
+      padding-top: 20px;
+    }
+  }
+
 </style>
 
 <!-- <div id="mobile-menu-overlay"></div> -->
@@ -85,7 +96,7 @@
 
 <div role="main" class="main">
   <div class="cart">
-    <div class="container">
+    <div class="container container-product">
       <h1 class="h2 heading-primary mt-lg clearfix">
         <span>Keranjang Belanja</span>
         <!-- <a href="#" class="btn btn-primary pull-right">Proceed to Checkout</a> -->

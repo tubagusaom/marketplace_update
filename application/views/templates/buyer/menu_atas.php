@@ -3,9 +3,13 @@
     #header .top-menu li a{
       color: red!important;
       float: left;
-      line-height: 1.5;
+      line-height: 2;
       font-weight: bold;
-      font-size: 10px;
+      font-size: 12px;
+    }
+
+    #header .top-menu li a:hover{
+      color: rgb(198, 155, 152);
     }
   }
 </style>
@@ -34,37 +38,28 @@
           <!-- <li><a href="#">Daily Deal</a></li> -->
           <li>
             <a href="<?=base_url()?>buyer" class="a-decoration-none">
-              <i class="fa fa-user"></i> <?=$nama_user?>
+              <i class="fa fa-user"></i> Saya
             </a>
           </li>
 
           <li>
-            <?php if (isset($nama_user)) { ?>
+          <a href="<?php echo base_url() ?>users/logout" class="a-decoration-none">
 
-              <a href="<?php echo base_url() ?>users/logout" class="a-decoration-none">
-                <i class="fa fa-sign-in"></i> Logout
-              </a>
+              <i class="fa fa-sign-in"></i> Keluar
 
-            <?php }else{ ?>
-
-              <a href="#" id="login-btn" data-toggle="modal" data-target="#myModal" class="a-decoration-none">
-                <i class="fa fa-sign-in"></i> Masuk
-              </a>
-
-            <?php } ?>
-        </li>
+          </a>
+          </li>
 
         <?php }else{ ?>
 
-        <li>
-          <a href="#" id="login-btn" data-toggle="modal" data-target="#myModal">
+        <a href="#" id="login-btn" data-toggle="modal" data-target="#myModal">
+          <li>
             <i class="fa fa-sign-in"></i> Masuk
-          </a>
-        </li>
+          </li>
+        </a>
 
         <?php } ?>
 
-        </li>
       </ul>
     </div>
     <p class="welcome-msg">

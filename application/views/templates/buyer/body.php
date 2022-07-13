@@ -12,6 +12,24 @@
 
   }
 
+  @media (max-width: 991px) {
+    #viewhp{
+      display: none!important;
+    }
+    #viewpc{
+      display: block!important;
+    }
+  }
+
+  @media (min-width: 991px) {
+    #viewhp{
+      display: block!important;
+    }
+    #viewpc{
+      display: none!important;
+    }
+  }
+
   .addtocart{
     background:#fff!important;
     color:#ee3d43!important;
@@ -66,11 +84,22 @@
     border: 1px solid #ee3d43;
   }
 
+  @media (max-width: 992px) {
+    .container-product{
+      padding-top: 200px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container-product{
+      padding-top: 20px;
+    }
+  }
+
 </style>
 
 <div role="main" class="main">
 
-<div class="banners-container">
+<div id="viewhp" class="banners-container">
   <div class="container">
     <div class="row">
 
@@ -126,7 +155,19 @@
   </div>
 </div>
 
-<div class="homepage-bar">
+<div id="viewpc" class="banners-container">
+  <div class="container container-product">
+    <div class="row">
+
+      <div class="slider-area">
+        <img class="img-responsive" src="<?=base_url()?>assets/img/slides/banner1.jpg" alt="homedepo">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- <div class="homepage-bar">
   <div class="container">
     <div class="row">
       <div class="col-md-4">
@@ -156,9 +197,9 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
-<div class="container">
+<div class="container" style="padding-top:20px;">
   <div class="row">
     <div class="col-md-12 normal">
       <div class="tabs home-products-tab">

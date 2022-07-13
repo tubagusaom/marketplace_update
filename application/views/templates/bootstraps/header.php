@@ -26,7 +26,8 @@
 		<link rel="apple-touch-icon" href="<?=base_url()?>assets/img/homedepo_icon.jpg">
 
 		<!-- Mobile Metas -->
-		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<!-- <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"> -->
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
 
 		<!-- Web Fonts  -->
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css">
@@ -87,18 +88,18 @@
 
 		<style media="screen">
 			.a-tb-wa{
-				color: #4ced69;
-				font-size: 12px;
+				color: #4ced69!important;
+				font-size: 12px!important;
 				font-family: "Open Sans", Arial, sans-serif;
-				font-weight: bold;
+				font-weight: bold!important;
 			}
 			.a-tb-wa:focus{
-				color: #4ced69;
-				text-decoration: none;
+				color: #4ced69!important;
+				text-decoration: none!important;
 			}
 			.a-tb-wa:hover{
-				color: #79ff91;
-				text-decoration: none;
+				color: #79ff91!important;
+				text-decoration: none!important;
 			}
 
 			a.a-decoration-none{
@@ -111,14 +112,20 @@
 				color: yellow!important;
 				cursor: none;
 			}
+
+			@media (max-width: 992px) {
+				.stickytb{
+					position: fixed;
+				}
+			}
 		</style>
 
 	</head>
 	<body>
 
 		<div class="body">
-			<header id="header" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyStartAt': 153, 'stickySetTop': '-153px', 'stickyChangeLogo': false}">
-				<div class="header-body">
+			<header id="header" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyStartAt': 153, 'stickySetTop': '-1px', 'stickyChangeLogo': false}">
+				<div class="header-body stickytb">
 
 					<?=$this->load->view('templates/bootstraps/menu_atas'); ?>
 

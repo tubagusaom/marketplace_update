@@ -584,11 +584,58 @@ class Buyer extends MY_Controller {
       echo "Ini data produk favorit";
     }
 
+    function add_keranjang($id_product) {
+      $id_buyer = $this->auth->get_user_data()->id_member;
+      // $id = $this->input->post('id_keranjang');
+
+      // var_dump($id_product); die();
+
+      $this->db->where('id', $id_product);
+      $product = $this->db->get(kode_tbl().'product')->row();
+
+      $this->db->where('id_product', $id_product);
+      $this->db->where('id_buyer', $id_buyer);
+      $this->db->where('stts_keranjang', '0');
+      $keranjang = $this->db->get(kode_tbl().'product_keranjang')->row();
+
+      // var_dump($product->jumlah_product); die();
+      // var_dump($keranjang->jumlah_product); die();
+      // var_dump($keranjang); die();
+
+      date_default_timezone_set("Asia/jakarta");
+
+      if (empty($keranjang)) {
+
+        $data_keranjang = array(
+            'id_product' => $id_product,
+            'id_buyer' => $id_buyer,
+            'id_member' => $product->id_member,
+            'jumlah_product' => '1',
+            'created_by' => $this->id,
+            'created_when' => date("Y-m-d H:i:s"),
+        );
+        $this->db->insert(kode_tbl().'product_keranjang', $data_keranjang);
+
+      }else{
+
+        $data_keranjang = array(
+            'jumlah_product' => ($keranjang->jumlah_product + 1),
+            'updated_by' => $this->id,
+            'updated_when' => date("Y-m-d H:i:s"),
+        );
+
+        $this->db->where('id_product', $id_product);
+        $this->db->where('id_buyer', $id_buyer);
+        $this->db->update(kode_tbl().'product_keranjang', $data_keranjang);
+
+      }
+    }
+
     function tambah_keranjang($id_product,$jum_product){
 
       $id_buyer = $this->auth->get_user_data()->id_member;
 
-      // var_dump($jum_product); die();
+      // var_dump($id_product); die();
 
       $this->db->where('id', $id_product);
       $product = $this->db->get(kode_tbl().'product')->row();

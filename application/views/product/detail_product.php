@@ -41,6 +41,17 @@
   height: 100%;
   border: none;
 }
+
+@media (max-width: 992px) {
+  .container-product{
+    padding-top: 210px;
+  }
+}
+@media (min-width: 992px) {
+  .container-product{
+    padding-top: 20px;
+  }
+}
 </style>
 
 <div id="mobile-menu-overlay"></div>
@@ -48,7 +59,7 @@
 <div role="main" class="main">
 
   <section class="page-header mb-lg" style="background: #db0c13;">
-    <div class="container">
+    <div class="container container-product">
       <ul class="breadcrumb">
         <li><a href="<?=base_url()?>">Home</a></li>
 
@@ -285,7 +296,7 @@
                       </tbody>
                     </table>
                   </div> -->
-                  
+
                 </div>
               </div>
 

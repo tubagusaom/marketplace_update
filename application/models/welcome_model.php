@@ -109,7 +109,7 @@ Class Welcome_model extends MY_Model {
       $this->db->where('c.status_delete <', '2');
       $this->db->order_by('a.id', 'DESC');
       // $this->db->order_by('', RAND());
-      $this->db->limit('100');
+      $this->db->limit('50');
       $this->db->group_by('a.id');
 
       $query = $this->db->get()->result();
@@ -197,7 +197,7 @@ Class Welcome_model extends MY_Model {
 
 
       $this->db->where('a.id_buyer', $id_buyer);
-      $this->db->where('a.stts_alamat', '1');
+      $this->db->where('a.jenis_alamat', '1');
       $query = $this->db->get();
       return $query->row();
 

@@ -45,6 +45,8 @@ Class Product_model extends MY_Model
 
   function show_filter_product($k,$id_k,$k1,$id_k1,$k2,$id_k2){
 
+    // var_dump($k); die();
+
     if (empty($k)) {
       $f="...";
     }
@@ -105,6 +107,9 @@ Class Product_model extends MY_Model
     $this->db->order_by('a.id', 'DESC');
     $this->db->group_by('a.id');
 
+    // $this->db->limit($perpage);
+    // $this->db->offset($offset);
+
     $query = $this->db->get();
     return $query->result();
 
@@ -123,6 +128,13 @@ Class Product_model extends MY_Model
          $query = $this->db->get(kode_tbl().'product a');
      }else{
          // $this->db->where('id_group_users',6);
+         $this->db->select(
+         '
+           a.*,
+           b.id AS id_repo,
+           b.nama_file,
+           c.member
+         ');
          $this->db->like('a.nama_product', $search);
          $this->db->order_by('a.id', 'ASC');
          $this->db->limit($perpage);

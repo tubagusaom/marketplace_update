@@ -2,7 +2,7 @@
   <div class="container">
     <div class="top-menu-area">
       <a href="#">
-        <i class="fa fa-user-o"></i> &nbsp; <?=$nama_user?> <i class="fa fa-caret-down"></i>
+        <i class="fa fa-user"></i> &nbsp; <?=$nama_user?> <i class="fa fa-caret-down"></i>
       </a>
       <ul class="top-menu">
 

@@ -102,6 +102,8 @@ class Search extends MY_Controller {
 
 	function filter($k=false,$id_k=false,$k1=false,$id_k1=false,$k2=false,$id_k2=false) {
 
+		// var_dump($k); die();
+
 		$id_member = $this->auth->get_user_data()->id_member;
 		$data['nama_user'] = $this->auth->get_user_data()->nama;
 
@@ -139,6 +141,53 @@ class Search extends MY_Controller {
 			// code...
 		}else {
 
+			// $offset = $this->uri->segment(4);
+			//
+	    // $menuid  = $id_k;
+	    // $katid   = $id_k1;
+	    // $subid   = $id_k2;
+			//
+	    // if (!empty($menuid) AND !empty($subid)) {
+	    //   $where1 = $this->db->where('id_sub_kategori', $id_k2);
+			// 	$sfx = $k.'/'.$id_k.'/'.$k1.'/'.$id_k1.'/'.$k2.'/'.$id_k2;
+			// 	$acuanid = $id_k2;
+	    // }elseif (!empty($menuid) AND !empty($katk)) {
+	    //   $where1 = $this->db->where('id_kategori', $id_k1);
+			// 	$sfx = $k.'/'.$id_k.'/'.$k1.'/'.$id_k1;
+			// 	$acuanid = $id_k1;
+	    // }elseif (!empty($menuid)) {
+	    //   $where1 = $this->db->where('id_menu_kategori', $id_k);
+			// 	$sfx = $k.'/'.$id_k;
+			// 	$acuanid = $id_k;
+	    // }
+			//
+			// $jml = $this->db->get(kode_tbl().'product');
+			// // $this->db->join(kode_tbl().'menu_kategori b','b.id=a.id_menu_kategori');
+			// // $this->db->join(kode_tbl().'kategori c','c.id=a.id_kategori');
+			// // $this->db->join(kode_tbl().'sub_kategori d','d.id=a.id_sub_kategori');
+			// $where1;
+			//
+			// $data['jmldata'] = $jml->num_rows();
+			//
+			// // var_dump($data['jmldata']); die();
+			// // var_dump($acuanid); die();
+			//
+			// $config['enable_query_strings'] = true;
+			// // $config['prefix'] = "?q=".$keyword."&rftb=true";
+			// $config['suffix'] = '/'.$sfx;
+			// // $config['suffix'] = '';
+			//
+			// $config['base_url'] = base_url().'f/'.$id;
+			// $config['total_rows'] = $jml->num_rows();
+			// $config['per_page'] = 20;
+			// $data['per_page'] = 20;
+			// $config['uri_segment'] = 4;
+			//
+			// $this->pagination->initialize($config);
+			// //buat pagination
+			// $data['halaman'] = $this->pagination->create_links();
+			// $data['show_filter_product'] = $this->product_model->show_filter_product($config['per_page'],$offset,$k,$id_k,$k1,$id_k1,$k2,$id_k2);
+
 		$data['show_filter_product'] = $this->product_model->show_filter_product($k,$id_k,$k1,$id_k1,$k2,$id_k2);
 
 		$menu_k   = $k;
@@ -157,7 +206,7 @@ class Search extends MY_Controller {
 		}
 
 		// var_dump($menu_id); die();
-		// var_dump($data['ket_filter']); die();
+		// var_dump($data['show_filter_product']); die();
 
 		}
 
@@ -174,7 +223,7 @@ class Search extends MY_Controller {
 
 		$this->load->view('templates/'.$header,$data);
 		// $this->load->view('templates/bootstraps/body',$data);
-		$this->load->view('product/'.$filpro,$data);
+		$this->load->view('product/filter',$data);
 		$this->load->view('templates/bootstraps/bottom_filter',$data);
 	}
 

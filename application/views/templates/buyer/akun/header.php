@@ -100,6 +100,10 @@
 				color: yellow!important;
 				cursor: none;
 			}
+			.tdn-p{
+			  text-decoration: none!important;
+				padding: 10px;
+			}
 		</style>
 
 	</head>
@@ -111,16 +115,13 @@
 
 					<?=$this->load->view('templates/buyer/menu_atas'); ?>
 
-					<?=$this->load->view('templates/buyer/menu_tengah'); ?>
+					<?=$this->load->view('templates/bootstraps/menu_tengah'); ?>
 
-					<?=$this->load->view('templates/buyer/akun/menu'); ?>
 
 				</div>
 			</header>
 
-			<?=$this->load->view('templates/buyer/akun/menu_responsive'); ?>
-
-      <section class="page-header">
+      <section class="page-header" style="background:#1c2a5f">
 				<div class="container">
 					<ul class="breadcrumb">
 						<!-- <li>
@@ -128,8 +129,16 @@
             </li> -->
 
 						<li>
-              <i class="fa fa-address-card"></i> <a href="#"><?=$nama_user?></a>
+              <a class="tdn-p" href="<?=base_url()?>buyer">
+								<i class="fa fa-user"></i> Biodata Diri
+							</a> |
+							<a class="tdn-p" href="<?=base_url()?>buyer/rincian_transaksi">
+								<i class="fa fa-exchange"></i> Transaksi
+							</a>
             </li>
+						<!-- <li>
+							<a href="<?=base_url()?>/buyer/rincian_transaksi">Transaksi</a>
+						</li> -->
 					</ul>
 				</div>
 			</section>
