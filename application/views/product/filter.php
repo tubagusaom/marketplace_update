@@ -68,7 +68,7 @@
 
   @media (max-width: 992px) {
     .container-product{
-      padding-top: 230px;
+      padding-top: 170px;
     }
   }
   @media (min-width: 992px) {
