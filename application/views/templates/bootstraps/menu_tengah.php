@@ -52,6 +52,29 @@
 
           <?php if (isset($nama_user)) { ?>
 
+            <div class="cart-dropdown">
+              <a href="#" class="cart-dropdown-icon">
+                <i class="fa fa-user-circle-o"></i>
+                <span class="cart-info" style="top:45%;">
+                </span>
+              </a>
+
+              <div class="cart-dropdownmenu right">
+                <div class="dropdownmenu-wrapper">
+                  <div class="cart-totals" style="text-align:left;">
+                    <span>
+                      <a href="<?=base_url()?>buyer"><i class="fa fa-user"></i> Saya</a>
+                    </span>
+                  </div>
+                  <div class="cart-totals" style="text-align:left;">
+                    <span>
+                      <a href="<?=base_url()?>users/logout"><i class="fa fa-sign-out"></i> Keluar</a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           <div class="cart-dropdown">
             <a href="<?=base_url()?>buyer/keranjang" class="cart-dropdown-icon">
               <i class="minicart-icon"></i>
@@ -72,7 +95,21 @@
             </div>
           </div>
 
-          <?php } ?>
+
+
+        <?php }else{ ?>
+
+          <div class="cart-dropdown">
+            <!-- <a href="<?=base_url()?>buyer" class="cart-dropdown-icon"> -->
+            <a href="#" class="cart-dropdown-icon" id="login-btn" data-toggle="modal" data-target="#myModal" title="Login / Masuk">
+              <i class="fa fa-sign-in"></i>
+              <span class="cart-info" style="top:45%;font-size:12px;">
+                <!-- masuk -->
+              </span>
+            </a>
+          </div>
+
+        <?php } ?>
 
           <!-- <div class="cart-dropdown">
             <a href="#" class="cart-dropdown-icon">

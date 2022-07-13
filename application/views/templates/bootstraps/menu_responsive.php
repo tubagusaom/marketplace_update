@@ -4,7 +4,7 @@
 	}
 
 	.menuhome{
-		padding: 15px 0;
+		padding: 8px 0;
     background-color: #db0c13;
     border-bottom: none;
 		text-align: center;
@@ -14,7 +14,7 @@
 		color: #fff;
 		text-decoration: none;
 	}
-	
+
 
 </style>
 
@@ -23,7 +23,7 @@
 	<div class="menuhome">
 		<a href="<?=base_url()?>">
 			<!-- <i class="fa fa-home"></i> -->
-			HOME DEPO
+			Menu Kategori
 		</a>
 	</div>
 

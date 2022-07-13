@@ -130,7 +130,9 @@
 			<header id="header" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyStartAt': 153, 'stickySetTop': '-1px', 'stickyChangeLogo': false}">
 				<div class="header-body stickytb">
 
-					<?=$this->load->view('templates/buyer/menu_atas'); ?>
+					<?php
+						// $this->load->view('templates/buyer/menu_atas');
+					?>
 
 					<!-- templates/bootstraps/menu_tengah -->
 					<!-- templates/buyer/menu_tengah -->
