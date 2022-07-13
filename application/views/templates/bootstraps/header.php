@@ -118,6 +118,7 @@
 					position: fixed;
 				}
 			}
+
 		</style>
 
 	</head>

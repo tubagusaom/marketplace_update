@@ -760,7 +760,7 @@ h2.word-rotator-title .word-rotate {
 	min-width: 250px;
 	padding-right: 170px;
 	background-color: #fff;
-	margin-top: 7px;
+	margin-top: 9.5px;
 }
 #header .header-search .header-search-wrapper.open {
 	display: block;
@@ -809,7 +809,7 @@ h2.word-rotator-title .word-rotate {
 #header .header-search .header-search-wrapper .form-control,
 #header .header-search .header-search-wrapper select {
 	float: left;
-	height: 38px;
+	height: 33px;
 	font-family: Arial;
 	font-size: 13px;
 	background-color: #fff;

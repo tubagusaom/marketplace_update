@@ -1,3 +1,11 @@
+<style media="screen">
+.tdn{
+  text-decoration: none!important;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-weight: bold!important;
+}
+</style>
+
 <div class="header-container container">
   <div class="header-row">
     <div class="header-column">
@@ -15,7 +23,7 @@
             <!-- <i class="fa fa-phone"></i> -->
             <span>
               <i class="fa fa-whatsapp">
-                <a class="a-tb-wa" href="https://api.whatsapp.com/send?phone=6287814091972&text=Hai%20Homemin ,%20tolong%20bantu%20saya :)" target="_blank" title="WA">
+                <a class="tdn" href="https://api.whatsapp.com/send?phone=6287814091972&text=Hai%20Homemin ,%20tolong%20bantu%20saya :)" target="_blank" title="WA">
                   +62 878-1409-1972
                 </a>
               </i>
@@ -31,7 +39,7 @@
 
             <span>
               <i class="fa fa-whatsapp">
-                <a class="a-tb-wa" href="https://api.whatsapp.com/send?phone=6281230222470&text=Hai%20Homemin ,%20tolong%20bantu%20saya :)" target="_blank" title="WA">
+                <a class="tdn" href="https://api.whatsapp.com/send?phone=6281230222470&text=Hai%20Homemin ,%20tolong%20bantu%20saya :)" target="_blank" title="WA">
                   +62 812-3022-2470
                 </a>
               </i>
@@ -39,7 +47,7 @@
 
             <span class="split"></span>
 
-            <a href="https://homedepo.co.id" target="_blank">TENTANG KAMI</a>
+            <a class="tdn" href="https://homedepo.co.id" target="_blank">TENTANG KAMI</a>
           </div>
 
           <?php if (isset($nama_user)) { ?>

@@ -116,6 +116,11 @@
 					position: fixed;
 				}
 			}
+
+			.tdn{
+				text-decoration: none;
+				font-family: "Open Sans", Arial, sans-serif;
+			}
 		</style>
 
 	</head>
