@@ -7,9 +7,138 @@
  bottom:0;
  width:100%;
  z-index: 5;
- padding-top: 15px;
+
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbarmenutb {
+  overflow: hidden;
+  /* background-color: #333;
+  position: fixed; */
+  bottom: 0;
+  width: 100%;
+}
+
+.navbarmenutb a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 80px;
+  text-decoration: none!important;
+  font-size: 15px;
+}
+
+.navbarmenutb a:hover {
+  background-color: #1c2a5f;
+  color: #fff;
+}
+
+.navbarmenutb a.activemenu, .navbarmenutb a.menulogin {
+  float: right;
+  background-color: #1c2a5f;
+  color: white;
+}
+.navbarmenutb a.copyrightmenu {
+  color: white;
+}
+.navbarmenutb a.copyrightmenu:hover {
+  background-color: #db0c13;
+}
+
+.navbarmenutb .iconmenu {
+  display: none;
+}
+
+.loginmenu{
+  margin: 5px;
+}
+
+@media screen and (max-width: 600px) {
+  .navbarmenutb a:not(:first-child) {display: none;}
+  .navbarmenutb a.iconmenu {
+    float: right;
+    display: block;
+  }
+
+  .navbarmenutb a.menulogin:not(:first-child) {display: block;}
+  .navbarmenutb a.menulogin {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbarmenutb a {
+    padding: 14px 16px;
+  }
+  .navbarmenutb.responsivemenu .iconmenu {
+    position: absolute;
+    right: 0;
+    bottom:0;
+  }
+  .navbarmenutb.responsivemenu a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .navbarmenutb a.activemenu {
+    float: left;
+  }
+  .copyrightmenu{
+    text-align: center!important;
+    font-size:12px!important;
+  }
+
 }
 </style>
+
+<footer id="footer">
+    <!-- <div class="container"> -->
+      <!-- <div class="row"> -->
+
+        <!-- <p class="copyright-text text-right" style="padding-right:15px;">
+          © Copyright <a href="https://www.homedepo.co.id/" target="_blank"><?=$aplikasi->singkatan_unit?></a> 2022
+        </p> -->
+
+        <div class="navbarmenutb" id="tbNavbar">
+
+          <a href="https://www.homedepo.co.id/" target="_blank" class="copyrightmenu" style="">
+            ©Copyright <?=$aplikasi->singkatan_unit?> 2022
+          </a>
+
+          <?php if (isset($nama_user)) { ?>
+
+
+
+          <a href="<?=base_url()?>buyer">
+            <i class="fa fa-user-o" style="font-size:13.5px;"></i>&nbsp; Saya
+          </a>
+          <a href="#notif">
+            <i class="fa fa-bell-o"></i>&nbsp; Notifikasi
+          </a>
+          <a href="<?=base_url()?>users/logout">
+            <i class="fa fa-sign-out"></i>&nbsp; Keluar
+          </a>
+
+          <a href="javascript:void(0);" style="font-size:15px;color:#fff;background:#1c2a5f" class="iconmenu" onclick="myFunction()">&#9776;</a>
+
+          <?php }else{ ?>
+
+            <a href="javascript:void(0);" style="font-size:15px;" class="menulogin"  id="login-btn" data-toggle="modal" data-target="#myModal" title="Login / Masuk">
+              <i class="fa fa-sign-in"></i>
+              <span class=""> Masuk </span>
+            </a>
+
+          <?php } ?>
+
+
+
+        </div>
+
+      <!-- </div> -->
+    <!-- </div> -->
+</footer>
 
 <!-- <footer id="footer">
   <div class="container">
@@ -148,35 +277,6 @@
   </div>
 </footer> -->
 
-<footer id="footer">
-  <!-- <div class="homepage-bar"> -->
-    <div class="container">
-      <!-- <div class="footer-ribbon">
-        <span><?=$aplikasi->singkatan_unit?></span>
-      </div> -->
-      <div class="row">
-        <!-- <div class="col col-md-4 col-sm-4">
-          <p>Hari ini : <?=$pengunjungHariIni?></p>
-          <p>Total : <?=$totalPengunjung;?></p>
-        </div>
-
-        <div class="col col-md-4 col-sm-4 text-right">
-          © Copyright <a href="https://www.homedepo.co.id/" target="_blank"><?=$aplikasi->singkatan_unit?></a> 2022
-        </div> -->
-
-        <!-- <p style="font-size: 18px;">Hari ini : <?=$pengunjungHariIni?></p>
-        <p style="font-size: 18px;">Total : <?=$totalPengunjung;?></p> -->
-
-        <p class="copyright-text text-right" style="padding-right:15px;">
-          © Copyright <a href="https://www.homedepo.co.id/" target="_blank"><?=$aplikasi->singkatan_unit?></a> 2022
-          <!-- . All Rights Reserved. -->
-        </p>
-
-      </div>
-    </div>
-  <!-- </div> -->
-</footer>
-
 </div>
 
 
@@ -244,6 +344,15 @@
    s1.setAttribute('crossorigin','*');
    s0.parentNode.insertBefore(s1,s0);
    })();
+
+   function myFunction() {
+      var x = document.getElementById("tbNavbar");
+      if (x.className === "navbarmenutb") {
+        x.className += " responsivemenu";
+      } else {
+        x.className = "navbarmenutb";
+      }
+    }
  </script>
 
 

@@ -104,44 +104,55 @@
 			  text-decoration: none!important;
 				padding: 10px;
 			}
+
+			@media (max-width: 992px) {
+				.stickytb{
+					position: fixed;
+				}
+			}
+
+			.tdn{
+				text-decoration: none;
+				font-family: "Open Sans", Arial, sans-serif;
+			}
 		</style>
 
 	</head>
 	<body>
 
 		<div class="body">
-			<header id="header" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyStartAt': 153, 'stickySetTop': '-153px', 'stickyChangeLogo': false}">
-				<div class="header-body">
-
-					<?=$this->load->view('templates/buyer/menu_atas'); ?>
+			<header id="header" data-plugin-options="{'stickyEnabled': true, 'stickyEnableOnBoxed': true, 'stickyEnableOnMobile': false, 'stickyStartAt': 153, 'stickySetTop': '-1px', 'stickyChangeLogo': false}">
+				<div class="header-body stickytb">
 
 					<?=$this->load->view('templates/bootstraps/menu_tengah'); ?>
 
 
+					<section class="page-header" style="background:#1c2a5f">
+						<div class="container">
+							<ul class="breadcrumb">
+								<!-- <li>
+		              <a href="#">Biodata Diri</a>
+		            </li> -->
+
+								<li>
+		              <a class="tdn-p" href="<?=base_url()?>buyer">
+										<i class="fa fa-user"></i> Biodata Diri
+									</a> |
+									<a class="tdn-p" href="<?=base_url()?>buyer/rincian_transaksi">
+										<i class="fa fa-exchange"></i> Transaksi
+									</a>
+		            </li>
+								<!-- <li>
+									<a href="<?=base_url()?>/buyer/rincian_transaksi">Transaksi</a>
+								</li> -->
+							</ul>
+						</div>
+					</section>
+
 				</div>
 			</header>
 
-      <section class="page-header" style="background:#1c2a5f">
-				<div class="container">
-					<ul class="breadcrumb">
-						<!-- <li>
-              <a href="#">Biodata Diri</a>
-            </li> -->
 
-						<li>
-              <a class="tdn-p" href="<?=base_url()?>buyer">
-								<i class="fa fa-user"></i> Biodata Diri
-							</a> |
-							<a class="tdn-p" href="<?=base_url()?>buyer/rincian_transaksi">
-								<i class="fa fa-exchange"></i> Transaksi
-							</a>
-            </li>
-						<!-- <li>
-							<a href="<?=base_url()?>/buyer/rincian_transaksi">Transaksi</a>
-						</li> -->
-					</ul>
-				</div>
-			</section>
 
 			<!-- <div class="modal fade bs-modal" role="dialog" id="myModal">
 			  <div class="modal-dialog">

@@ -4547,10 +4547,10 @@ label {
 }
 
 #footer {
-	background-color: #121214;
+	background-color: #db0c13;
 	color: #777;
 	font-size: 13px;
-	padding-top: 41px;
+	/* padding-top: 51px; */
 }
 #footer .footer-ribbon {
 	margin-top: -61px;

@@ -58,7 +58,7 @@ class Buyer extends MY_Controller {
 
       $this->load->view('templates/buyer/akun/header',$data);
       $this->load->view('templates/buyer/akun/body',$data);
-      $this->load->view('templates/buyer/akun/bottom',$data);
+      $this->load->view('templates/bootstraps/bottom',$data);
 
     }
 
@@ -99,7 +99,7 @@ class Buyer extends MY_Controller {
 
       $this->load->view('templates/buyer/header',$data);
       $this->load->view('buyer/keranjang',$data);
-      $this->load->view('templates/buyer/bottom_buyer',$data);
+      $this->load->view('templates/bootstraps/bottom',$data);
     }
 
     function checkout(){
@@ -220,7 +220,7 @@ class Buyer extends MY_Controller {
 
       $this->load->view('templates/buyer/header',$data);
       $this->load->view('buyer/checkout',$data);
-      $this->load->view('templates/buyer/bottom_buyer',$data);
+      $this->load->view('templates/bootstraps/bottom',$data);
     }
 
     function rincian_transaksi(){
@@ -265,7 +265,7 @@ class Buyer extends MY_Controller {
 
       $this->load->view('templates/buyer/akun/header',$data);
       $this->load->view('templates/buyer/akun/rincian_transaksi',$data);
-      $this->load->view('templates/buyer/akun/bottom',$data);
+      $this->load->view('templates/bootstraps/bottom',$data);
     }
 
 
@@ -371,7 +371,7 @@ class Buyer extends MY_Controller {
 
       $this->load->view('templates/buyer/header',$data);
       $this->load->view('buyer/detail_transaksi',$data);
-      $this->load->view('templates/buyer/bottom_buyer',$data);
+      $this->load->view('templates/bootstraps/bottom',$data);
     }
 
     function transaksi(){

@@ -3578,11 +3578,11 @@ html.dark .text-muted {
 }
 /* #Footer */
 #footer {
-	background: #0e0e0e;
-	border-top: 4px solid #0e0e0e;
+	background: #db0c13;
+	border-top: 4px groove #eee;
 	font-size: 0.9em;
 	margin-top: 50px;
-	padding: 70px 0 0;
+	/* padding: 70px 0 0; */
 	position: relative;
 	clear: both;
 }

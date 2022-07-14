@@ -22,6 +22,19 @@
   .textcopy::selection, .textcopy:focus{
     outline: none;
   }
+
+
+
+  @media (max-width: 992px) {
+    .container-product{
+      padding-top: 145px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container-product{
+      padding-top: 20px;
+    }
+  }
 </style>
 <script src="<?=base_url('assets/js/sweetalert.js')?>"></script>
 
@@ -39,7 +52,7 @@
   </div>
 </section> -->
 
-  <div class="container">
+  <div class="container container-product">
     <div class="row">
 
       <div class="col-md-12 my-account form-section">
@@ -47,7 +60,7 @@
         <h1 class="h2 heading-primary font-weight-normal">Transaksi Saya</h1>
 
         <div class="featured-box featured-box-primary featured-box-flat featured-box-text-left mt-md">
-          <div class="box-content">
+          <!-- <div class="box-content"> -->
 
             <!-- MAINTENANCE -->
 
@@ -241,7 +254,7 @@
             </div>
 
 
-          </div>
+          <!-- </div> -->
         </div>
 
       </div>

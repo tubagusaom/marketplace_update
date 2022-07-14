@@ -11,7 +11,7 @@
     <div class="header-column">
       <div class="header-logo">
         <a href="<?=base_url()?>">
-          <img alt="Porto" width="76" height="51" src="<?=base_url()?>assets/img/logo_transparent.png">
+          <img alt="Porto" width="76" height="56" src="<?=base_url()?>assets/img/logo_transparent.png">
         </a>
       </div>
     </div>
@@ -52,7 +52,7 @@
 
           <?php if (isset($nama_user)) { ?>
 
-            <div class="cart-dropdown">
+            <!-- <div class="cart-dropdown">
               <a href="#" class="cart-dropdown-icon">
                 <i class="fa fa-user-circle-o"></i>
                 <span class="cart-info" style="top:45%;">
@@ -73,41 +73,40 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
           <div class="cart-dropdown">
             <a href="<?=base_url()?>buyer/keranjang" class="cart-dropdown-icon">
-              <i class="minicart-icon"></i>
+              <i class="minicart-icon" style="color:#1c2a5f"></i>
               <span class="cart-info" style="top:45%;">
-                <span class="cart-qty">
+                <span class="cart-qty" style="color:#fff;">
                   <?=$total_keranjang?>
                 </span>
                 <!-- <span class="cart-text">item(s)</span> -->
               </span>
             </a>
 
-            <div class="cart-dropdownmenu right">
+            <!-- <div class="cart-dropdownmenu right">
               <div class="dropdownmenu-wrapper">
                 <div class="cart-totals">
                   Lihat <span>Keranjang</span>
                 </div>
               </div>
-            </div>
+            </div> -->
+
           </div>
 
 
 
         <?php }else{ ?>
 
-          <div class="cart-dropdown">
-            <!-- <a href="<?=base_url()?>buyer" class="cart-dropdown-icon"> -->
+          <!-- <div class="cart-dropdown">
             <a href="#" class="cart-dropdown-icon" id="login-btn" data-toggle="modal" data-target="#myModal" title="Login / Masuk">
               <i class="fa fa-sign-in"></i>
               <span class="cart-info" style="top:45%;font-size:12px;">
-                <!-- masuk -->
               </span>
             </a>
-          </div>
+          </div> -->
 
         <?php } ?>
 
