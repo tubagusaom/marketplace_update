@@ -121,7 +121,7 @@
             <i class="fa fa-sign-out"></i>&nbsp; Keluar
           </a>
 
-          <a href="javascript:void(0);" style="font-size:15px;color:#fff;background:#1c2a5f" class="iconmenu" onclick="myFunction()">&#9776;</a>
+          <a href="javascript:void(0);" style="font-size:15px;color:#fff;" class="iconmenu" onclick="myFunction()">&#9776;</a>
 
           <?php }else{ ?>
 
